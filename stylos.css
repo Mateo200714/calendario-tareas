@@ -1,0 +1,1121 @@
+/* fuentes de texto */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carlito:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    background-color: #151718;
+}
+
+/* fecha */
+.div-fecha-inferior {
+    position: absolute;
+    bottom: 7px;
+    right: 12px;
+    width: calc(100% - 12px);
+    height: 18px;
+    text-align: right;
+    color: #5dc12b;
+    letter-spacing: 1.75px;
+    font-weight: 700;
+    font-size: 16.5px;
+    font-family: 'Bruno Ace SC', cursive;
+    user-select: none;
+    z-index: 100;
+}
+
+.div-hora-inferior {
+    position: absolute;
+    bottom: calc(18px + 12px);
+    right: 12px;
+    width: calc(100% - 12px);
+    height: 18px;
+    text-align: right;
+    color: #5dc12b;
+    letter-spacing: 1.7px;
+    font-weight: 600;
+    font-size: 17px;
+    font-family: 'Bruno Ace SC', cursive;
+    user-select: none;
+    z-index: 100;
+}
+
+/* titulo fecha */
+.svg-flecha-mes-anterior {
+    transition: 0.8s;
+    position: absolute;
+    top: 50px;
+    left: 10%;
+    width: auto;
+    height: 32px;
+    z-index: 100;
+    fill: rgb(11, 184, 184);
+}
+
+.svg-flecha-mes-anterior:hover {
+    transition: 0.5s;
+    fill: rgb(28, 223, 223);
+}
+
+.svg-flecha-mes-siguiente {
+    transition: 0.8s;
+    transform: rotate(180deg);
+    position: absolute;
+    top: 50px;
+    right: 10%;
+    width: auto;
+    height: 32px;
+    z-index: 100;
+    fill: rgb(11, 184, 184);
+}
+
+.svg-flecha-mes-siguiente:hover {
+    transition: 0.5s;
+    fill: rgb(28, 223, 223);
+}
+
+.div-fecha-titulo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+}
+
+.div-dia-actual-titulo {
+    position: absolute;
+    bottom: 5px;
+    text-align: left;
+    width: 55%;
+    height: 25px;
+    font-size: 21.5px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    font-family: 'Carlito', sans-serif;
+    color: #4bb416;
+}
+
+.div-mes-actual-titulo {
+    position: absolute;
+    bottom: 7px;
+    padding-right: 15px;
+    text-align: center;
+    width: 65%;
+    height: 40px;
+    font-size: 33px;
+    font-weight: 600;
+    letter-spacing: 1.35px;
+    font-family: 'Carlito', sans-serif;
+    color: #0e70b6;
+}
+
+@media(max-width:540px) {
+    .div-mes-actual-titulo {
+        font-size: 23px;
+        height: 27px;
+        padding-right: 25px;
+    }
+}
+
+.div-año-actual-titutlo {
+    position: absolute;
+    bottom: 5px;
+    text-align: right;
+    width: 55%;
+    height: 25px;
+    font-size: 21.5px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    font-family: 'Carlito', sans-serif;
+    color: #4bb416;
+}
+
+.div-linea-diseño-fecha-actual-titulo {
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 65%;
+    height: 5px;
+    background-color: rgb(27, 46, 87);
+    box-shadow: 0px 0px 2px rgb(27, 52, 106);
+}
+
+/* casillas calendario */
+.div-indice-calendario {
+    position: absolute;
+    top: calc(80px + 50px);
+    left: 0%;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.div-calendario-bt-indice {
+    transition: 1.1s;
+    position: relative;
+    width: 35%;
+    max-width: 350px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    color: rgba(13, 156, 113, 0.92);
+    border-radius: 5px;
+}
+
+.div-calendario-bt-indice:hover {
+    transition: 0.8s;
+    color: rgba(15, 215, 155, 0.92);
+    background-color: rgba(171, 214, 193, 0.593);
+}
+
+.div-linea-diseño-calendario-indice {
+    transition: 0.8s;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 0%;
+    height: 3px;
+    background-color: rgba(115, 198, 159, 0.805);
+}
+
+#div-calendario-todas-casillas {
+    position: absolute;
+    top: calc(80px + 50px + 80px);
+    left: calc(7.5% - 6px);
+    width: 85%;
+    min-width: auto;
+    height: calc(60px * 5 + 50px);
+    background-color: #1b1e20;
+    user-select: none;
+    border: 2px ridge #102e43;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #154160;
+    padding: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-casilla-calendario {
+    transition: 0.5s;
+    position: relative;
+    width: calc((85% / 7) - 2px);
+    height: 60px;
+    background-color: rgb(203, 228, 234);
+    box-shadow: -1.25px 0px 1px rgb(132, 159, 165),
+        0px 0px 1px rgb(132, 159, 165),
+        1.5px 0px 1px rgb(132, 159, 165),
+        -1.25px 1.5px 1px rgb(132, 159, 165),
+        -1.25px -1.25px 1px rgb(132, 159, 165),
+        1.5px 1.5px 1px rgb(132, 159, 165),
+        1.5px -1.25px 1px rgb(132, 159, 165),
+        0px -1.25px 1px rgb(132, 159, 165),
+        0px 1.5px 1px rgb(132, 159, 165);
+    border-radius: 5px;
+    float: left;
+    margin: 5px;
+    cursor: pointer;
+}
+
+@media(max-width:540px) {
+    #div-calendario-todas-casillas {
+        left: calc(5% - 6px);
+        width: 90%;
+    }
+
+    .div-casilla-calendario {
+        margin: 4px;
+        width: calc((90% / 7) - 3px);
+    }
+}
+
+.div-casilla-calendario:hover {
+    transition: 0.2s;
+    box-shadow: -1.25px 0px 1px rgb(143, 182, 190),
+        0px 0px 1px rgb(143, 182, 190),
+        0.75px 0px 1px rgb(143, 182, 190),
+        -0.3px 0.75px 1px rgb(143, 182, 190),
+        -0.3px -0.3px 1px rgb(143, 182, 190),
+        0.7px 0.7px 1px rgb(143, 182, 190),
+        0.7px -0.3px 1px rgb(143, 182, 190),
+        0px -0.3px 1px rgb(143, 182, 190),
+        0px 0.7px 1px rgb(143, 182, 190);
+}
+
+.div-dia-casilla-calendario {
+    position: absolute;
+    top: 3.5px;
+    left: 1.5px;
+    width: calc(100% - 6.5px);
+    height: 22px;
+    padding-left: 5px;
+    font-size: 18.5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    color: rgb(34, 37, 41);
+}
+
+.div-total-cosas-hacer-propias-casillas-calendario {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: calc(100% - 5px);
+    height: 25px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.15px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(3, 103, 83);
+}
+
+.div-total-cosas-hacer-importantes-casillas-calendario {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: calc(100% - 5px);
+    height: 25px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.15px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(154, 4, 14);
+}
+
+/* mostrar tareas */
+.svg-flecha-volver {
+    transition: 0.8s;
+    position: absolute;
+    top: 45px;
+    left: 8%;
+    width: auto;
+    height: 40px;
+    z-index: 100;
+    fill: rgb(215, 148, 5);
+}
+
+.svg-flecha-volver:hover {
+    transition: 0.5s;
+    fill: rgb(233, 170, 2);
+}
+
+.div-todas-tareas {
+    position: absolute;
+    top: calc(80px + 50px);
+    left: 12.5%;
+    width: 75%;
+    height: calc(100% - (80px + 50px + 50px));
+}
+
+.div-indice-tareas {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.bt-tareas-todas-importantes-propias {
+    transition: 1.1s;
+    position: relative;
+    min-width: auto;
+    width: 25%;
+    max-width: 350px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    color: rgba(13, 156, 113, 0.92);
+    border-radius: 5px;
+}
+
+.bt-tareas-todas-importantes-propias:hover {
+    transition: 0.8s;
+    color: rgba(15, 215, 155, 0.92);
+    background-color: rgba(171, 214, 193, 0.593);
+}
+
+.bt-tareas-propias {
+    transition: 1.1s;
+    position: relative;
+    min-width: auto;
+    width: 35%;
+    max-width: 350px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    color: rgba(13, 156, 113, 0.92);
+    border-radius: 5px;
+}
+
+.bt-tareas-propias:hover {
+    transition: 0.8s;
+    color: rgba(15, 215, 155, 0.92);
+    background-color: rgba(171, 214, 193, 0.593);
+}
+
+.bt-tareas-importantes {
+    transition: 1.1s;
+    position: relative;
+    min-width: auto;
+    width: 40%;
+    max-width: 350px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    color: rgba(13, 156, 113, 0.92);
+    border-radius: 5px;
+}
+
+.bt-tareas-importantes:hover {
+    transition: 0.8s;
+    color: rgba(15, 215, 155, 0.92);
+    background-color: rgba(171, 214, 193, 0.593);
+}
+
+.div-todas-tareas-lista {
+    background-color: aquamarine;
+    position: absolute;
+    top: calc(30px + 30px);
+    left: 0%;
+    width: 100%;
+    height: calc(100% - 30px - 30px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 5px;
+}
+
+.div-linea-diseño-tareas-indice {
+    transition: 0.8s;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 0%;
+    height: 2.5px;
+    background-color: rgba(91, 142, 118, 0.805);
+}
+
+/* todas las tareas activas */
+.div-todas-tareas-activas-calendario {
+    position: absolute;
+    top: calc(80px + 50px + 50px);
+    left: 12.5%;
+    width: 75%;
+    height: 63%;
+}
+
+.div-indice-tareas-activas-calendario {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    overflow-x: auto;
+    user-select: none;
+}
+
+.div-bt-indice-tareas-activas-calendario {
+    transition: 1.1s;
+    position: relative;
+    width: 35%;
+    max-width: 350px;
+    min-height: 30px;
+    max-height: 45px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    color: rgba(4, 103, 149, 0.92);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.div-bt-indice-tareas-activas-calendario:hover {
+    transition: 0.8s;
+    color: rgba(5, 115, 166, 0.92);
+    background-color: rgba(158, 211, 210, 0.593);
+}
+
+#div-todas-tareas-activas-recibidas-calendario {
+    position: absolute;
+    top: 60px;
+    left: 0%;
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: #4bb416;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+
+.div-alinear-svg-añadir-tarea {
+    position: absolute;
+    top: calc(63% + 80px + 50px + 50px + 12px);
+    left: 0%;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-añadir-tarea {
+    transition: 1s;
+    position: relative;
+    bottom: 0px;
+    left: 0%;
+    width: 65px;
+    height: 65px;
+    fill: #185c8d;
+    border-radius: 5px;
+    background-color: #69aad8;
+    cursor: pointer;
+}
+
+.svg-añadir-tarea:hover {
+    transition: 0.1s;
+    bottom: -0.5px;
+    fill: #185c8d;
+    box-shadow: 0px 0px 6px rgb(47, 229, 196);
+    width: 67px;
+    height: 67px;
+}
+
+@media(max-width:800px) {
+    .div-alinear-svg-añadir-tarea {
+        top: calc(63% + 80px + 50px + 50px + 7px);
+    }
+
+    .svg-añadir-tarea {
+        width: 60px;
+        height: 60px;
+    }
+
+    .svg-añadir-tarea:hover {
+        width: 62px;
+        height: 62px;
+    }
+}
+
+@media(max-width:550px) {
+    .div-alinear-svg-añadir-tarea {
+        top: calc(63% + 80px + 50px + 50px + 4px);
+    }
+
+    .svg-añadir-tarea {
+        width: 55px;
+        height: 55px;
+    }
+
+    .svg-añadir-tarea:hover {
+        width: 57px;
+        height: 57px;
+    }
+}
+
+/*clima*/
+.div-clima-calendario {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    min-width: 220px;
+    width: 45%;
+    max-width: 260px;
+    height: 115px;
+    min-height: 175px;
+    max-height: 200px;
+    background-color: #053a49;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px #7d878e;
+    cursor: pointer;
+    user-select: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.div-nombre-lugar {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    height: 22px;
+    min-width: 45%;
+    font-size: 17px;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    color: #f4f4f4;
+}
+
+.div-nombre-lugar:hover {
+    text-decoration: underline;
+}
+
+.div-img-tiempo {
+    position: absolute;
+    top: 0px;
+    right: 0%;
+    width: 50%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.img-tiempo {
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    transform: scale(1.2);
+}
+
+.div-text-tiempo {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 25%;
+    font-size: 14.5px;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.75px;
+    text-align: center;
+    color: #f4f4f4;
+    margin-top: 12px;
+}
+
+.div-text-tiempo::first-letter {
+    text-transform: capitalize;
+}
+
+.div-text-temperatura-actual {
+    position: absolute;
+    top: 50px;
+    height: 20px;
+    width: 40%;
+    left: 0%;
+    font-size: 15.5px;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f4f4f4;
+}
+
+.div-text-temperatura-maxima {
+    position: absolute;
+    top: 75px;
+    height: 20px;
+    width: 50%;
+    left: 0%;
+    font-size: 15.5px;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f4f4f4;
+}
+
+.img-temperatura-actual {
+    position: relative;
+    top: 0px;
+    height: 100%;
+    left: 8px;
+}
+
+.img-humedad-actual {
+    position: relative;
+    top: -2px;
+    height: 100%;
+    right: 8px;
+}
+
+.div-text-temperatura-minima {
+    position: absolute;
+    top: 100px;
+    height: 20px;
+    width: 50%;
+    left: 0%;
+    font-size: 15.5px;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f4f4f4;
+}
+
+.div-text-humedad-actual {
+    position: absolute;
+    top: calc(60% + 5px);
+    right: 0%;
+    height: 18px;
+    width: 50%;
+    font-size: 13.5px;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.85px;
+    display: flex;
+    justify-content: center;
+    color: #f4f4f4;
+}
+
+.img-viento-actual {
+    position: relative;
+    top: -2px;
+    height: 100%;
+    right: 8px;
+}
+
+.div-text-viento {
+    position: absolute;
+    top: calc(60% + 30px);
+    right: 0%;
+    height: 18px;
+    width: 50%;
+    font-size: 13.5px;
+    line-height: 18px;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.9px;
+    display: flex;
+    justify-content: center;
+    color: #f4f4f4;
+}
+
+/* añadir tareas */
+#div-body-añadir-tareas {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1c;
+    z-index: 1000;
+}
+
+#svg-cancelar-tarea {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    user-select: none;
+}
+
+#svg-añadir-tarea {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.div-ajuste-tarea-alinear {
+    position: relative;
+    top: 75px;
+    left: 12.5%;
+    width: 75%;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.text-titulo-tarea-ajuste {
+    position: relative;
+    left: -15px;
+    top: -2px;
+    width: 100%;
+    height: 20px;
+    text-align: left;
+    font-size: 17.5px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #08969d;
+    user-select: none;
+}
+
+#textarea-titulo-tarea {
+    position: relative;
+    top: 10px;
+    width: 100%;
+    height: 30px;
+    padding-left: 5px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.75px;
+    font-weight: 600;
+    font-size: 13.7px;
+    background-color: #343f47;
+    color: #d4ecea;
+    border: 1px solid #0a2f3a;
+    border-radius: 6px;
+    outline: none;
+    resize: none;
+}
+
+#textarea-descripcion-tarea {
+    position: relative;
+    top: 10px;
+    width: 100%;
+    height: 75px;
+    padding-left: 5px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.75px;
+    font-weight: 600;
+    font-size: 13.4px;
+    background-color: #343f47;
+    color: #d4ecea;
+    border: 1px solid #0a2f3a;
+    border-radius: 6px;
+    outline: none;
+    resize: none;
+}
+
+.div-fecha-alinear {
+    position: absolute;
+    top: 20px;
+    left: 0%;
+    width: 59%;
+    height: 50px;
+}
+
+.div-hora-alinear {
+    position: absolute;
+    top: 20px;
+    right: 0%;
+    width: 39%;
+    height: 50px;
+}
+
+#input-fecha-tarea {
+    position: relative;
+    top: 10px;
+    min-width: 140px;
+    width: auto;
+    padding-top: 1.5px;
+    padding-bottom: 2px;
+    padding-left: 1px;
+    padding-right: 2px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.75px;
+    font-weight: 600;
+    font-size: 15.5px;
+    color: #448c9e;
+    border: none;
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: text;
+    outline: none;
+}
+
+#input-fecha-tarea:hover {
+    text-shadow: 0px 0px 2px #225a68;
+}
+
+#bt-hora-ajustes-tarea {
+    position: relative;
+    top: 10px;
+    min-width: 57px;
+    width: auto;
+    padding-top: 1.5px;
+    padding-bottom: 2px;
+    padding-left: 1px;
+    padding-right: 2px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.75px;
+    font-weight: 600;
+    font-size: 15.5px;
+    color: #448c9e;
+    border: none;
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: text;
+    outline: none;
+}
+
+#bt-hora-ajustes-tarea:hover {
+    text-shadow: 0px 0px 2px #225a68;
+}
+
+.bt-tipo-opcion-tarea {
+    position: relative;
+    top: 15px;
+    border: 1px outset #000;
+    border-radius: 0px;
+    cursor: pointer;
+    height: 25px;
+    width: auto;
+    padding-left: 3px;
+    padding-right: 3.5px;
+    padding-top: 2.5px;
+    padding-bottom: 3px;
+    background-color: #ececec;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.bt-tipo-opcion-tarea-pulsado {
+    position: relative;
+    top: 15px;
+    border-radius: 0px;
+    cursor: pointer;
+    height: 25px;
+    width: auto;
+    padding-left: 3px;
+    padding-right: 3.5px;
+    padding-top: 1px;
+    padding-bottom: 3px;
+    background-color: #ececec;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#bt-tipo-opcion-tarea-1 {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #25a1c6;
+    border: 1px inset #25c6c3;
+}
+
+#bt-tipo-opcion-tarea-2 {
+    background-color: #dc4620;
+    border: 1px inset #dc2920;
+}
+
+#bt-tipo-opcion-tarea-3 {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #099c6b;
+    border: 1px outset #079323;
+}
+
+#bt-tipo-opcion-tarea-pulsado-1 {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #1c83a2;
+    border: 1px inset #0f9ea3;
+}
+
+#bt-tipo-opcion-tarea-pulsado-2 {
+    background-color: #b53b1c;
+    border: 1px inset #c71d14;
+}
+
+#bt-tipo-opcion-tarea-pulsado-3 {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #0e9769;
+    border: 1px outset #0aa729;
+}
+
+#div-tipo-tarea-alinear-1 {
+    top: calc(70px + 55px + 60px);
+}
+
+.div-tipo-tarea-alinear {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 60%;
+    height: 60px;
+}
+
+.div-hecho-tarea-alinear {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: calc(40% - 10px);
+    height: 60px;
+}
+
+.div-label-check-hecho-tarea {
+    position: relative;
+    width: 100%;
+    top: calc(100% - (100% - 20px));
+    height: calc(100% - 20px);
+}
+
+.div-switch-button-hecho {
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin-left: 20px;
+}
+
+.div-switch-button-hecho .switch-button__checkbox-hecho {
+    display: none;
+    border: none;
+}
+
+.div-switch-button-hecho .switch-button__label-hecho {
+    opacity: 0.2;
+    background-color: #d6d6d6;
+    width: 70px;
+    height: 16px;
+    border-radius: 3rem;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    box-shadow: 0px 0px 3px #535353ac;
+}
+
+.div-switch-button-hecho .switch-button__label-hecho:before {
+    transition: 0.55s;
+    display: block;
+    position: absolute;
+    top: -4px;
+    left: -10px;
+    width: 25px;
+    height: 25px;
+    content: '';
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    box-shadow: 0px 0px 3px #7a7a7aac;
+}
+
+.div-switch-button-hecho .switch-button__checkbox-hecho:checked+.switch-button__label-hecho {
+    background-color: #2b825b;
+    opacity: 1;
+    box-shadow: 0px 0px 3px #105637;
+}
+
+.div-switch-button-hecho .switch-button__checkbox-hecho:checked+.switch-button__label-hecho:before {
+    background-color: #05a55d;
+    opacity: 1;
+    transform: translateX(64px);
+    box-shadow: 0px 0px 2px #105637;
+}
+
+.div-bloquear-interaccion-pagina {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 1010;
+    background-color: #0b131c;
+    opacity: 0.55;
+}
+
+.div-alinear-menu-cancelar-añadir-tarea {
+    position: absolute;
+    top: calc(35% - 70px);
+    left: 0%;
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1011;
+    display: none;
+}
+
+#div-menu-cancelar-añadir-tarea {
+    background-color: #064050;
+    box-shadow: 0px 0px 2.7px #227199;
+    position: relative;
+    width: 280px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+.div-alinear-bt-menu-cancelar-añadir-tarea {
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    width: calc(100% - 45px);
+    height: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.bt-menu-cancelar-añadir-tarea {
+    position: relative;
+    min-width: 50px;
+    width: auto;
+    height: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2.5px;
+    padding-bottom: 3px;
+    margin-left: 5px;
+    border: 1px outset #075e6b;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: "roboto", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+}
+
+.bt-menu-cancelar-añadir-tarea:hover {
+    box-shadow: 0px 0px 3px #0d7c9e;
+}
+
+.bt-menu-cancelar-añadir-tarea:active {
+    border: 1px inset #075e6b;
+    box-shadow: none;
+}
+
+.svg-reiniciar-ajustes {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    cursor: pointer;
+}
